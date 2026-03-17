@@ -66,7 +66,7 @@ export function CalculatorsSection() {
               <Link
                 key={index}
                 href={calc.href}
-                className="group flex flex-col items-center p-6 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center"
+                className="group flex flex-col items-center p-6 rounded-xl bg-card border border-border hover:border-primary/30  transition-all duration-300 text-center"
               >
                 <div
                   className={`h-14 w-14 rounded-full flex items-center justify-center mb-4 ${calc.color} group-hover:scale-110 transition-transform`}
