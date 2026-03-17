@@ -52,7 +52,7 @@ export function FeaturesSection() {
             return (
               <div
                 key={index}
-                className="group p-6 rounded-xl bg-background border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                className="group p-6 rounded-xl bg-background border border-border hover:border-primary/30  transition-all duration-300"
               >
 
               <div className="text-center">

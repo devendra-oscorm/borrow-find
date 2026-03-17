@@ -50,7 +50,7 @@ const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  
 ]
 
 export function Footer() {
@@ -84,7 +84,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2 text-background/70">
                 <MapPin className="h-4 w-4" />
-                <span>Mumbai, Maharashtra, India</span>
+                <span>Noida, Uttar Pradesh, India</span>
               </div>
             </div>
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown , User, Phone } from "lucide-react"
+import { Menu, X, ChevronDown, User, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
+import Image from "next/image"
 const navItems = [
   {
     label: "Loans",
@@ -66,20 +66,30 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [showAnnouncement, setShowAnnouncement] = useState(true)
 
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Announcement Bar */}
+      {showAnnouncement && (
       <div className="bg-primary text-primary-foreground py-2 px-4">
         <div className="container mx-auto flex items-center justify-center gap-2 text-sm">
           <span>Get instant loan approval in just 5 minutes!</span>
           <Link href="#" className="underline font-medium hover:text-accent">
             Apply Now
-          </Link>
+          </Link> 
         </div>
+   
+          <button
+            onClick={() => setShowAnnouncement(false)}
+            className="absolute right-4 top-2 text-primary-foreground hover:text-accent"
+          >
+            <X className="h-4 w-4" />
+          </button>
+     
       </div>
+    )}  
 
-      
 
 
       {/* Main Navigation */}
@@ -87,30 +97,35 @@ export function Header() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">B</span>
-              </div>
-              <span className="text-xl font-bold text-primary">BorrowFind</span>
-            </Link>
 
+            <Link href="/" className="flex items-center">
+              <div className="absolute h-30 w-40">
+                <Image
+                  src="/Logo/Borrow-Find.png"   // your renamed file
+                  alt="BorrowFind Logo"
+                  fill
+                  className="object-contain transition-transform duration-300 hover:scale-105"
+                  priority
+                />
+              </div>
+            </Link>
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <DropdownMenu key={item.label}>
                   <DropdownMenuTrigger asChild>
                     <Button
-                       variant="ghost"
-                       className="flex items-center gap-1 text-foreground hover:bg-transparent hover:text-primary focus:bg-transparent focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:outline-none"
->                      
+                      variant="ghost"
+                      className="flex items-center gap-1 text-foreground hover:bg-transparent hover:text-primary focus:bg-transparent focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:outline-none"
+                    >
                       {item.label}
                       <ChevronDown className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-56">
                     {item.children?.map((child) => (
-                      <DropdownMenuItem key={child.label} asChild >
-                        
+                      <DropdownMenuItem key={child.label} asChild>
+
                         <Link href={child.href}>{child.label}</Link>
                       </DropdownMenuItem>
                     ))}
@@ -122,22 +137,22 @@ export function Header() {
             {/* Right Actions */}
             <div className="flex items-center gap-3">
 
-            {/* Call to Expert Button */}
+              {/* Call to Expert Button */}
               <Button className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-300 hover:scale-105">
                 <Phone className="h-4 w-4" />
-                 Call to Expert
+                Call to Expert
               </Button>
 
-            {/* Signup Button */}
-             <Button
-             variant="outline"
-               className="hidden md:flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-  >
+              {/* Signup Button */}
+              <Button
+                variant="outline"
+                className="hidden md:flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
                 <User className="h-4 w-4" />
-                 Sign Up
-             </Button>
-            
-           
+                Sign Up
+              </Button>
+
+
 
 
               {/* Mobile Menu Button */}

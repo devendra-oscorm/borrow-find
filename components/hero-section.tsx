@@ -152,8 +152,8 @@ export function HeroSection() {
 
             {/* Selected Goal CTA */}
             {selectedGoal && (
-              <div className="mt-6 p-4 rounded-xl bg-primary/10 border border-primary/20 text-center">
-                <p className="text-foreground font-medium">{selectedGoal.description}</p>
+              <div className="mt-6 p-4 rounded-xl bg-secondary border border-primary/20 text-center">
+                <p className="text-foreground font-medium ">{selectedGoal.description}</p>
                 <button className="mt-3 px-6 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
                   Explore Options
                 </button>

@@ -61,7 +61,7 @@ export function CTASection() {
               <span className="text-primary-foreground/70 text-sm mt-1">support@borrowfind.com</span>
             </a>
 
-            <button className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors text-center">
+            <button className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors text-center cursor-pointer">
               <div className="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center mb-3">
                 <MessageCircle className="h-6 w-6 text-primary-foreground" />
               </div>

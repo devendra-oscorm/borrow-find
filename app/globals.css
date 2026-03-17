@@ -221,3 +221,17 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   width: max-content;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+  color: hsl(var(--primary));
+}

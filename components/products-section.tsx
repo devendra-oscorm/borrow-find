@@ -1,9 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, Home, GraduationCap, Car, Briefcase, Heart, CreditCard } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const categories = [
   { id: "all", label: "All Products" },
@@ -16,56 +18,56 @@ const products = [
   {
     id: 1,
     category: "loans",
-    icon: Home,
+    icon: "/Homeloan.svg",
     title: "Home Loan",
     rate: "8.5% p.a.",
     features: ["Up to ₹5 Crore", "30 Year Tenure", "No Prepayment Charges"],
-    color: "bg-sky-500",
+
   },
   {
     id: 2,
     category: "loans",
-    icon: GraduationCap,
+    icon: "/Educationloan.svg",
     title: "Education Loan",
     rate: "10.5% p.a.",
     features: ["Up to ₹75 Lakhs", "Moratorium Period", "No Collateral Required"],
-    color: "bg-emerald-500",
+
   },
   {
     id: 3,
     category: "loans",
-    icon: Car,
+    icon: "/Carloan.svg",
     title: "Car Loan",
     rate: "9.0% p.a.",
     features: ["100% Financing", "7 Year Tenure", "Quick Disbursement"],
-    color: "bg-amber-500",
+
   },
   {
     id: 4,
     category: "loans",
-    icon: Briefcase,
+    icon: "/Businessloan.svg",
     title: "Business Loan",
     rate: "11.5% p.a.",
     features: ["Up to ₹50 Lakhs", "Minimal Documentation", "Flexible EMIs"],
-    color: "bg-rose-500",
+
   },
   {
     id: 5,
     category: "insurance",
-    icon: Heart,
+    icon: "/Healthloan.svg",
     title: "Health Insurance",
     rate: "₹500/month",
     features: ["₹10 Lakh Coverage", "Family Floater", "5000+ Hospitals"],
-    color: "bg-pink-500",
+
   },
   {
     id: 6,
     category: "credit",
-    icon: CreditCard,
+    icon: "/Premiumcard.svg",
     title: "Premium Credit Card",
     rate: "No Annual Fee",
     features: ["5X Rewards", "Airport Lounge", "Fuel Surcharge Waiver"],
-    color: "bg-indigo-500",
+
   },
 ]
 
@@ -109,59 +111,71 @@ export function ProductsSection() {
 
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product) => {
-            const Icon = product.icon
-            return (
-              <div
-                key={product.id}
-                className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-xl hover:translate-y-2 transition-all duration-300 cursor-pointer"
-              >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div
-                      className={cn(
-                        "h-14 w-14 rounded-xl flex items-center justify-center",
-                        product.color
-                      )}
-                    >
-                      <Icon className="h-7 w-7 text-white group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <span className="text-lg font-bold text-primary">{product.rate}</span>
+          {filteredProducts.map((product) => (
+            <div
+              key={product.id}
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+            >
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div
+                    className={cn(
+                      "h-14 w-14 rounded-xl flex items-center justify-center",
+
+                    )}
+                  >
+                    <Image
+                      src={product.icon}
+                      alt={product.title}
+                      width={50}
+                      height={50}
+                      className="object-contain "
+                    />
                   </div>
 
-                  <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
-                    {product.title}
-                  </h3>
-
-                  <ul className="space-y-2 mb-6">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-muted-foreground text-sm">
-                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex gap-3">
-                    <Button className="flex-1 bg-primary  hover:opacity-90 text-white">
-                      Apply Now
-                    </Button>
-                    <Button variant="outline" className="flex-1 hover:bg-primary hover:text-white transition-all">
-                      Learn More
-                    </Button>
-                  </div>
+                  <span className="text-lg font-bold text-primary">
+                    {product.rate}
+                  </span>
                 </div>
 
-                {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
+                  {product.title}
+                </h3>
+
+                <ul className="space-y-2 mb-6">
+                  {product.features.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-muted-foreground text-sm"
+                    >
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex gap-3">
+                  <Button className="flex-1 bg-primary hover:opacity-90 text-white">
+                    Apply Now
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="flex-1 hover:bg-primary hover:text-white transition-all"
+                  >
+                    Learn More
+                  </Button>
+                </div>
               </div>
-            )
-          })}
+
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            </div>
+          ))}
         </div>
 
         {/* View All CTA */}
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group">
+          <Button variant="outline" size="lg" className="group hover:bg-primary hover:text-white transition-all">
             View All Products
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
