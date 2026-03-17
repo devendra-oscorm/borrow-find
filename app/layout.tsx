@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Manrope } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-
-const playfair = Playfair_Display({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
+  variable: "--font-inter",
 });
 
-const manrope = Manrope({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-manrope",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +20,6 @@ export const metadata: Metadata = {
     "BorrowFind helps you discover and compare the best loan options, insurance plans, and financial services tailored to your needs.",
   icons: {
     icon: "/favicon.ico"
-
   },
 };
 
@@ -34,8 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${playfair.variable} font-sans`}
+        className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
+        
       >
+        
         {children}
         <Analytics />
       </body>

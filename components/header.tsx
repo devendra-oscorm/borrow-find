@@ -138,7 +138,7 @@ export function Header() {
             <div className="flex items-center gap-3">
 
               {/* Call to Expert Button */}
-              <Button className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-300 hover:scale-105">
+              <Button className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-300 hover:scale-105 cursor-pointer">
                 <Phone className="h-4 w-4" />
                 Call to Expert
               </Button>
@@ -146,7 +146,7 @@ export function Header() {
               {/* Signup Button */}
               <Button
                 variant="outline"
-                className="hidden md:flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                className="hidden md:flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer"
               >
                 <User className="h-4 w-4" />
                 Sign Up

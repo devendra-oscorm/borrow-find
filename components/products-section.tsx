@@ -98,7 +98,7 @@ export function ProductsSection() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={cn(
-                "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105",
+                "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 cursor-pointer",
                 activeCategory === cat.id
                   ? "bg-primary text-white shadow-md scale-105"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
@@ -155,12 +155,12 @@ export function ProductsSection() {
                 </ul>
 
                 <div className="flex gap-3">
-                  <Button className="flex-1 bg-primary hover:opacity-90 text-white">
+                  <Button className="flex-1 bg-primary hover:opacity-90 text-white cursor-pointer">
                     Apply Now
                   </Button>
                   <Button
                     variant="outline"
-                    className="flex-1 hover:bg-primary hover:text-white transition-all"
+                    className="flex-1 hover:bg-primary hover:text-white transition-all cursor-pointer"
                   >
                     Learn More
                   </Button>
@@ -175,7 +175,7 @@ export function ProductsSection() {
 
         {/* View All CTA */}
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group hover:bg-primary hover:text-white transition-all">
+          <Button variant="outline" size="lg" className="group hover:bg-primary hover:text-white transition-all cursor-pointer">
             View All Products
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>

@@ -50,7 +50,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative p-6 rounded-xl bg-background border border-border hover:shadow-lg transition-all duration-300"
+              className="relative p-6 rounded-xl bg-background border border-border transition-all duration-300"
             >
               <Quote className="absolute top-4 right-4 h-8 w-8 text-primary/10" />
               

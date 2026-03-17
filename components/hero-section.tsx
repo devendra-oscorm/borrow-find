@@ -76,7 +76,7 @@ export function HeroSection() {
                 placeholder="Enter your loan amount"
                 className="flex-1 px-4 py-3 rounded-lg border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary"
               />
-              <button className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
+              <button className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors cursor-pointer ">
                 Check Eligibility
               </button>
             </div>
@@ -154,7 +154,7 @@ export function HeroSection() {
             {selectedGoal && (
               <div className="mt-6 p-4 rounded-xl bg-secondary border border-primary/20 text-center">
                 <p className="text-foreground font-medium ">{selectedGoal.description}</p>
-                <button className="mt-3 px-6 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
+                <button className="mt-3 px-6 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors cursor-pointer">
                   Explore Options
                 </button>
               </div>

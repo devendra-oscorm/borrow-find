@@ -23,14 +23,14 @@ export function CTASection() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 cursor-pointer">
                 Apply Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 bg-transparent"
+                className="border-white text-white hover:bg-white/10 bg-transparent cursor-pointer"
               >
                 Schedule a Call
               </Button>
