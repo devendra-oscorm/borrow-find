@@ -49,7 +49,7 @@ export function HeroSection() {
   const selectedGoal = goals.find((g) => g.id === activeGoal)
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#7a050d]/10 via-white to-black/5 py-12 md:py-20">
+    <section className="relative overflow-hidden bg-linear-to-br from-[#7a050d]/10 via-white to-black/5 py-12 md:py-20">
       {/* Background Patterns */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
