@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Manrope, Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import LeadPopup from "@/components/popup";
 
-const inter = Inter({
+// ✅ Body Font (Manrope)
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-manrope",
 });
 
-const poppins = Poppins({
+// ✅ Heading Font (Roboto)
+const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  weight: ["400", "500", "700"], // 600 not available in Roboto
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "BorrowFind helps you discover and compare the best loan options, insurance plans, and financial services tailored to your needs.",
   icons: {
-    icon: "/favicon.ico"
+    icon: "/favicon.ico",
   },
 };
 
@@ -29,12 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
-        
-      >
-        
+    <html lang="en" className={`${manrope.variable} ${roboto.variable}`}>
+      <body className="font-sans antialiased">
+        <LeadPopup />
         {children}
         <Analytics />
       </body>

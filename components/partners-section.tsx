@@ -23,7 +23,7 @@ export function PartnersSection() {
   {partners.map((partner, index) => (
     <div
       key={index}
-      className="h-16 max-w-[160px] flex items-center justify-center"
+      className="h-16 max-w-40 flex items-center justify-center"
     >
 
       <Image
