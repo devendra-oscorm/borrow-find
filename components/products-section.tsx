@@ -117,7 +117,7 @@ export function ProductsSection() {
               className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer"
             >
               <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex items-start rounded-xl justify-between mb-4">
                   <div
                     className={cn(
                       "h-14 w-14 rounded-xl flex items-center justify-center",

@@ -62,7 +62,7 @@ export function HeroSection() {
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-balance">
               Find the Perfect{" "}
-              <span className="text-[#7a050d]">Financial Solution</span> for Your Goals
+              <span className="text-primary">Financial Solution</span> for Your Goals
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
               Compare loans, insurance plans, and financial products from top providers. 
@@ -123,7 +123,7 @@ export function HeroSection() {
                     key={goal.id}
                     onClick={() => setActiveGoal(goal.id)}
                     className={cn(
-                        "relative flex flex-col items-center p-6 rounded-xl bg-card border-2",
+                        "relative flex flex-col items-center p-6 bg-card border cursor-pointer",
                         activeGoal === goal.id
                         
                  )}
